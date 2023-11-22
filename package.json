@@ -84,5 +84,12 @@
     "videojs-generator-verify": "~4.0.0",
     "videojs-languages": "^2.0.0",
     "videojs-standard": "^9.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/jb-alvarado/videojs-hls-quality-selector/issues"
+  },
+  "homepage": "https://github.com/jb-alvarado/videojs-hls-quality-selector#readme",
+  "directories": {
+    "test": "test"
   }
 }
