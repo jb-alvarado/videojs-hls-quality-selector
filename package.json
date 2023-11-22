@@ -1,5 +1,5 @@
 {
-  "name": "videojs-hls-quality-selector",
+  "name": "jb-videojs-hls-quality-selector",
   "version": "2.0.0",
   "description": "Adds a quality selector menu for HLS sources played in videojs.  Requires `videojs-contrib-hls` and videojs-contrib-quality-levels plugins.",
   "main": "dist/videojs-hls-quality-selector.cjs.js",
@@ -8,7 +8,10 @@
   "generator-videojs-plugin": {
     "version": "9.0.0"
   },
-  "repository": "https://github.com/jb-alvarado/videojs-hls-quality-selector.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jb-alvarado/videojs-hls-quality-selector.git"
+  },
   "scripts": {
     "build": "npm-run-all -s clean -p build:*",
     "build-prod": "cross-env-shell NO_TEST_BUNDLE=1 'npm run build'",
