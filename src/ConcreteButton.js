@@ -53,6 +53,7 @@ export default class ConcreteButton extends VideoJsButtonClass {
      */
   createMenu() {
     const menu = new VideoJsMenuClass(this.player_, {menuButton: this});
+    menu.addClass("hls-quality-button");
 
     this.hideThreshold_ = 0;
 

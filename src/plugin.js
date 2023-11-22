@@ -27,7 +27,7 @@ class HlsQualitySelectorPlugin {
 
     // If there is quality levels plugin and the HLS tech exists
     // then continue.
-    if (this.player.qualityLevels && this.getHls()) {
+    if (this.player.qualityLevels) {
       // Create the quality button.
       this.createQualityButton();
       this.bindPlayerEvents();
@@ -40,7 +40,7 @@ class HlsQualitySelectorPlugin {
    * @return {*} - videojs-hls-contrib plugin.
    */
   getHls() {
-    return this.player.tech({ IWillNotUseThisInPlugins: true }).hls;
+    return this.player.tech({ IWillNotUseThisInPlugins: true }).vhs;
   }
 
   /**
@@ -71,7 +71,7 @@ class HlsQualitySelectorPlugin {
       concreteButtonInstance
         .menuButton_.$('.vjs-icon-placeholder').className += icon;
     } else {
-      this.setButtonInnerText('auto');
+      this.setButtonInnerText(this.player.localize('Auto'));
     }
     concreteButtonInstance.removeClass('vjs-hidden');
 
@@ -169,7 +169,7 @@ class HlsQualitySelectorPlugin {
     this._currentQuality = quality;
 
     if (this.config.displayCurrentQuality) {
-      this.setButtonInnerText(quality === 'auto' ? quality : `${quality}p`);
+      this.setButtonInnerText(quality === 'auto' ? this.player.localize('Auto') : `${quality}p`);
     }
 
     for (let i = 0; i < qualityList.length; ++i) {
@@ -225,7 +225,7 @@ const onPlayerReady = (player, options) => {
  */
 const hlsQualitySelector = function(options) {
   this.ready(() => {
-    onPlayerReady(this, videojs.mergeOptions(defaults, options));
+    onPlayerReady(this, videojs.obj.merge(defaults, options));
   });
 };
 
