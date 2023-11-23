@@ -5,6 +5,7 @@
   "main": "dist/jb-videojs-hls-quality-selector.cjs.js",
   "module": "dist/jb-videojs-hls-quality-selector.es.js",
   "browser": "dist/jb-videojs-hls-quality-selector.js",
+  "types": "dist/jb-videojs-hls-quality-selector.d.ts",
   "generator-videojs-plugin": {
     "version": "9.0.0"
   },
@@ -18,7 +19,8 @@
     "build-test": "cross-env-shell TEST_BUNDLE_ONLY=1 'npm run build'",
     "build:css": "postcss -o dist/videojs-hls-quality-selector.css --config scripts/postcss.config.js src/plugin.css",
     "build:js": "rollup -c scripts/rollup.config.js",
-    "build:lang": "vjslang --dir dist/lang && cp lang/* dist/lang",
+    "build:lang": "vjslang --dir dist/lang && shx cp lang/* dist/lang",
+    "build:types": "shx cp src/index.d.ts dist/jb-videojs-hls-quality-selector.d.ts",
     "clean": "shx rm -rf ./dist ./test/dist ./cjs ./es && shx mkdir -p ./dist ./test/dist ./cjs ./es",
     "lint": "vjsstandard",
     "server": "karma start scripts/karma.conf.js --singleRun=false --auto-watch",
