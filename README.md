@@ -118,6 +118,16 @@ require(['video.js', 'videojs-hls-quality-selector'], function(videojs) {
 });
 ```
 
+### Change icon
+
+It is possible to change the icon for example to a gear with:
+
+```js
+player.hlsQualitySelector({
+    vjsIconClass: 'vjs-icon-cog',
+});
+```
+
 ## License
 
 MIT. Copyright (c) Chris Boustead (chris@forgemotion.com)
