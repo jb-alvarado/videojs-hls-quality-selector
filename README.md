@@ -63,7 +63,7 @@ Display Current Quality option enabled:
 ## Installation
 
 ```sh
-npm install --save videojs-hls-quality-selector
+npm install --save jb-videojs-hls-quality-selector
 ```
 
 ## Usage
@@ -95,7 +95,7 @@ var videojs = require('video.js');
 // The actual plugin function is exported by this module, but it is also
 // attached to the `Player.prototype`; so, there is no need to assign it
 // to a variable.
-require('videojs-hls-quality-selector');
+require('jb-videojs-hls-quality-selector');
 
 var player = videojs('my-video');
 
@@ -109,7 +109,7 @@ player.hlsQualitySelector({
 When using with RequireJS (or another AMD library), get the script in whatever way you prefer and `require` the plugin as you normally would:
 
 ```js
-require(['video.js', 'videojs-hls-quality-selector'], function(videojs) {
+require(['video.js', 'jb-videojs-hls-quality-selector'], function(videojs) {
   var player = videojs('my-video');
 
   player.hlsQualitySelector({
